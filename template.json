@@ -62,7 +62,7 @@
                 ["Docker", "#2496ED", "docker"],
                 ["Pickle", "#93934A", ""]]],
             ["Operating Systems", [
-                ["Linux", "#FCC624", "linux"],
+                ["Linux", "#FCC624", "linux", "black"],
                 ["Ubuntu", "#E95420", "ubuntu"],
                 ["MacOS", "#000000", "macos"],
                 ["Windows", "#0078D6", "windows"]]],
