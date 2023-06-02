@@ -1,15 +1,15 @@
 {
     "section_0": {
         "format": "image",
-        "src": "/static/header_1.png",
+        "src": "/header_1.png",
         "alt": ""
     },
     "section_1": {
         "title": "Profiles and Contact",
         "format": "badge_group_linked",
         "badges": [
-            ["LinkedIn", "#0077B5", "linkedin", "https://www.linkedin.com/in/ianwu13"],
             ["Website", "#005A9C", "w3c", "https://ianwu13.github.io/"],
+            ["LinkedIn", "#0077B5", "linkedin", "https://www.linkedin.com/in/ianwu13"],
             ["GitHub", "#100000", "github", "https://www.github.com/ianwu13"],
             ["Academic Email", "#EA4335", "gmail", "mailto:ianwu@usc.edu"],
             ["Professional Email", "#0078D4", "microsoftoutlook", "mailto:ianwu99@outlook.com"]
@@ -46,21 +46,21 @@
                 ["Seaborn", "#EAEAF2", "data:image/png;base64,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", "black"],
                 ["Plotly", "#3F4F75", "plotly"]]],
             ["Web Development", [
-                ["React", "#61DAFB", "react", "black"],
+                ["React.JS", "#61DAFB", "react", "black"],
                 ["Flask", "#000000", "flask"],
                 ["Node.js", "#339933", "nodedotjs"],
                 ["HTML", "#E34F26", "html5"],
                 ["CSS", "#1572B6", "css3"]]],
+                ["DevOps/MLOps and Deployment", [
+                ["Amazon AWS (Lambda, EC2, S3)", "#232F3E", "amazonaws"],
+                ["Conda", "#44A833", "anaconda"],
+                ["Docker", "#2496ED", "docker"],
+                ["Pickle", "#93934A", "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAARpQTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////s0ZwpAAAAF50Uk5TAAATWZOVe6/6pgdq2f7/6CIXs/3dD8eAAdg4+/kIv0bfoBv0aaTiLfxcFszOCQq4cA3VBcrCICS0EULzOmXvM4vJsrUE8O2RC6MCU5DI5mEG63lbtjnumr4yjYZmO2cNiAMAAAEFSURBVHicfdLnVsJAEAXgFYSskYzEWKiKgAYRFQtgLyhFUbF33/819ODRzMyO3r/fzZbJKiVnKBQejkQtPfKH26MxB74yFpfdHfdgkImQ6JNT8JNpyRPWr0NSKqTSQSEjeHYmcHCEwqxGhZxQmEMOlun5Ai4UzcI89oW84b6DvLRoeHkJL1BZ5r6yih2q3Neor28wj29iLtXqzBsx8v3WNvOdXeKwRzm7f0CdzvDw6NijXsEj8pvAc1IO+LTaMrztBm53PMMtdMDumcGZ6Dnav6e56wvs6pL7Vf+aXNChfHNrs/lRL9wl1D8Fff/AGRcen/jfI4X084vESr0O8vb+Ybyu73wC6ZMqpNwDAkQAAAAASUVORK5CYII="]]],
             ["Code Collaboration", [
                 ["Git", "#F05032", "git"],
                 ["GitHub", "#181717", "github"],
                 ["Google Colab", "#F9AB00", "googlecolab"],
                 ["Replit", "#F26207", "replit"]]],
-            ["DevOps/MLOps and Deployment", [
-                ["Amazon AWS (Lambda, EC2, S3)", "#232F3E", "amazonaws"],
-                ["Conda", "#44A833", "anaconda"],
-                ["Docker", "#2496ED", "docker"],
-                ["Pickle", "#93934A", "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAARpQTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////s0ZwpAAAAF50Uk5TAAATWZOVe6/6pgdq2f7/6CIXs/3dD8eAAdg4+/kIv0bfoBv0aaTiLfxcFszOCQq4cA3VBcrCICS0EULzOmXvM4vJsrUE8O2RC6MCU5DI5mEG63lbtjnumr4yjYZmO2cNiAMAAAEFSURBVHicfdLnVsJAEAXgFYSskYzEWKiKgAYRFQtgLyhFUbF33/819ODRzMyO3r/fzZbJKiVnKBQejkQtPfKH26MxB74yFpfdHfdgkImQ6JNT8JNpyRPWr0NSKqTSQSEjeHYmcHCEwqxGhZxQmEMOlun5Ai4UzcI89oW84b6DvLRoeHkJL1BZ5r6yih2q3Neor28wj29iLtXqzBsx8v3WNvOdXeKwRzm7f0CdzvDw6NijXsEj8pvAc1IO+LTaMrztBm53PMMtdMDumcGZ6Dnav6e56wvs6pL7Vf+aXNChfHNrs/lRL9wl1D8Fff/AGRcen/jfI4X084vESr0O8vb+Ybyu73wC6ZMqpNwDAkQAAAAASUVORK5CYII="]]],
             ["Operating Systems", [
                 ["Linux", "#FCC624", "linux", "black"],
                 ["Ubuntu", "#E95420", "ubuntu"],
