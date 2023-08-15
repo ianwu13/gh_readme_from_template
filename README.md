@@ -10,11 +10,11 @@ Huge thanks/acknowledement [Sidney Arcidiacono](https://github.com/SidneyArcidia
 
 The template should be a json file containing a single json object. Top level keys should be in the format "*section_x*" and are used to order the sections in the final README. 
 
-The corresponding values for each key should also be json objects, although their contents will depend on their section type. All section type support an optional `"title"` field (key) which can be set to create a title/header for the given section
+The corresponding values for each key should also be json objects, although their contents will vary depending on section type. All section types support an optional `"title"` field (key) which can be set to create a title/header for the given section
 
-This repo is built around badges, each of which can be assigned an icon. These icons are set with an `ICON_ID` from [Simple Icons](https://simpleicons.org/), but can also be set to custom icons if a base64 encoding is provided instead of an id.
+This repo is built around badges, each of which can be assigned an icon. These icons are set with an `<ICON_ID>` from [Simple Icons](https://simpleicons.org/), but can also be set as custom icons if a base64-encoded string for the desired image is provided instead of an id.
 
-A completed template example is provided in `./template.json`
+A filled template example is provided in `./template.json`
 
 ### Section Types
 
@@ -25,8 +25,8 @@ Currently supported section types and their usage:
 An image. Originally intended to be used for banners/headers.
 
 Keys:
-* "src" - path to image source
-* "alt" - alternate text if file is missing
+* "src" - A path to image file to be used
+* "alt" - Alternate text if file is missing
 
 Example:
     {
@@ -41,7 +41,7 @@ Example:
 A group of badges with links.
 
 Keys:
-* "badges" - a list of lists. each sub-list contains info for a given badge. Sub-list format : [<TEXT>, <HEX_COLOR>, <ICON_ID>, <LINK>]
+* "badges" - A list of lists. Each sub-list contains info for a given badge. Sub-list format : [<TEXT>, <HEX_COLOR>, <ICON_ID>, <LINK>]
 
 Example:
     {
@@ -85,7 +85,7 @@ Example:
 A list of bullet points.
 
 Keys:
-* "items" - a list of strings corresponding to each bullet point
+* "items" - A list of strings corresponding to each bullet point
 
 Example:
     {
