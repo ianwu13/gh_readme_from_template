@@ -65,10 +65,21 @@ def write_tbl_sect(d: dict, f: io.TextIOWrapper, s_id: str):
     f.write('\n')
 
 
+def write_blt_sect(d: dict, f: io.TextIOWrapper, s_id: str):
+    if 'items' not in d.keys():
+        raise Exception(f'Missing "src" field in {s_id}')
+
+    for i in d['items']:
+        f.write(f'- {i}\n')
+
+    f.write(f'\n')
+
+
 SECTION_WRITERS = {
     'image': write_img_sect,
     'badge_group_linked': write_bgl_sect,
-    'table': write_tbl_sect
+    'table': write_tbl_sect,
+    'bullets': write_blt_sect
 }
 
 
@@ -87,7 +98,7 @@ def main():
     # ARGUMENTS
     parser = argparse.ArgumentParser(description='Generate a README resume for your GitHub profile page')
     parser.add_argument('--template', default='template.json', type=str, help='Path for the template file; "template.json" by default')
-    parser.add_argument('--outfile', default='README.md', type=str, help='File path to write output to; "README.md" by default')
+    parser.add_argument('--outfile', default='generated_readme.md', type=str, help='File path to write output to; "README.md" by default')
     args = parser.parse_args()
 
     with open(args.outfile, 'w') as f:
