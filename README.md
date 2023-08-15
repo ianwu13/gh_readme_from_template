@@ -1,3 +1,117 @@
+# Info
+
+This repo allows the user to quickly generate attractive custom README files for their github profile (or whatever) based on a simple template.
+
+Huge thanks/acknowledement [Sidney Arcidiacono](https://github.com/SidneyArcidiacono/) for the original design!
+
+## Usage
+
+### Basics
+
+The template should be a json file containing a single json object. Top level keys should be in the format "*section_x*" and are used to order the sections in the final README. 
+
+The corresponding values for each key should also be json objects, although their contents will depend on their section type. All section type support an optional `"title"` field (key) which can be set to create a title/header for the given section
+
+This repo is built around badges, each of which can be assigned an icon. These icons are set with an `ICON_ID` from [Simple Icons](https://simpleicons.org/), but can also be set to custom icons if a base64 encoding is provided instead of an id.
+
+A completed template example is provided in `./template.json`
+
+### Section Types
+
+Currently supported section types and their usage:
+
+`"image"`
+```
+An image. Originally intended to be used for banners/headers.
+
+Keys:
+* "src" - path to image source
+* "alt" - alternate text if file is missing
+
+Example:
+    {
+        "format": "image",
+        "src": "/header_1.png",
+        "alt": ""
+    }
+```
+
+`"badge_group_linked"`
+```
+A group of badges with links.
+
+Keys:
+* "badges" - a list of lists. each sub-list contains info for a given badge. Sub-list format : [<TEXT>, <HEX_COLOR>, <ICON_ID>, <LINK>]
+
+Example:
+    {
+        "format": "badge_group_linked",
+        "badges": [
+            ["Website", "#005A9C", "w3c", "https://ianwu13.github.io/"],
+            ["GitHub", "#100000", "github", "https://www.github.com/ianwu13"]
+        ]
+    }
+```
+
+`"table"`
+```
+A table of badges. Originally intended to be used as a skills table.
+
+Keys:
+* "col_types" - The type of content in each column. Currently supported content types:
+    * "text"
+    * "badge_group"
+* "cols" - Heading text for each column. This is an optional field.
+* "rows" - A list of lists. Each sub-list contains the info for a single row. Sub-list contents should correspond to the content type specified for each index. 
+    * "text" - Content should be a string
+    * "badge_group" - Content should be a list of lists. Each sub-list corresponds to a badge. Sub-list format : [<TEXT>, <HEX_COLOR>, <ICON_ID>, ?<USE_BLACK_TEXT>]
+
+Example:
+    {
+        "col_types": ["text", "badge_group"],
+        "cols": ["Type", "Technologies"],
+        "rows": [
+            ["Operating Systems", [
+                ["Linux", "#FCC624", "linux", "black"],
+                ["Ubuntu", "#E95420", "ubuntu"],
+                ["MacOS", "#000000", "macos"],
+                ["Windows", "#0078D6", "windows"]]]
+        ]
+    }
+```
+
+`"bullets"`
+```
+A list of bullet points.
+
+Keys:
+* "items" - a list of strings corresponding to each bullet point
+
+Example:
+    {
+        "format": "bullets",
+        "items": [
+            "bullet 1",
+            "bullet 2"
+        ]
+    }
+```
+
+### Generating the README
+
+The script `./gen_readme_from_template.py` is used to generate the actual markdown file from the template.
+
+The script has 2 command line arguments (--template and --outfile) which the user can set to use specific template files or destinations.
+
+An example call can be seen below:
+```
+python3 gen_readme_from_template.py --template customized_template.json --outfile custom_readme.md
+```
+
+***
+
+# Example README
+
 ![](/header_1.png)
 
 # Profiles and Contact
@@ -22,3 +136,7 @@
 | Operating Systems | ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)![MacOS](https://img.shields.io/badge/MacOS-000000?style=for-the-badge&logo=macos&logoColor=white)![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white) |
 | Other | ![Jupyter Notebooks](https://img.shields.io/badge/Jupyter_Notebooks-F37626?style=for-the-badge&logo=jupyter&logoColor=white)![LaTeX](https://img.shields.io/badge/LaTeX-008080?style=for-the-badge&logo=latex&logoColor=white)![Slurm Workload Manager](https://img.shields.io/badge/Slurm_Workload_Manager-42afeb?style=for-the-badge&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAzCAMAAABWt10pAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAApRQTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////IjQ6hAAAANx0Uk5TAAUcJyYgJIry//nCLbH+tRIE990zCOM5CeQ6BhcYDwIRFgoAGUmChG889twyASx0gV8lj+b736SoH7j99bAdx4ATXvjpRe8eyAMbR/FueivnjfoHFA6/bM7rCxA0qb6zednJ4jih8JGst1mG1jBTjoxpuq3uRMrgPj8pDGS86N4N03xBwGs75cFLzcaTgzZzI5imTxUvnapU2jF+7UOj9EbMxZnP0jVmuVtxbX38f669tp/hq3I3KCLzZ5B1GpVhYHYq10rUXLtiidDb0VB4nlJYWlfqly6WVXCvPRVcfTsAAATqSURBVHic7Zf7X1NlGMDfTXCdgOmRgSjbDuMQiGNgDFBEcQQoBwYKGxEMAWFCokEXCBLDmRcIJBEJkrSSUpklUZQGy+xudsFu6+Y/0/OecTznMFabcx9/qOen93mf8zzf97x7LmcI/SdFIl2CJShYEjjGUtkDBCsPhoQGDBImJzhZtjxADHLFHQYRrggQJIJnEJErAwSJEkBWrf4fct8g0UqVSqVUk2iRH56KAZtKE0v5h6DjHopPAFmTCAq5lodokxDSJadg27qHU/2DxOrT2JjpGRAUrecpG2IQytyYxa43bfYPkr2Fi2oALecRbS4reTIlqPlb5225/kG2FXCQBKwyymBWChmsFRnnben3FCKWwEAoabGMlZLtVEAg8aAl7OA0eWmsAFJ2d8FNZrO5HE6repTr7hWQslo+hR9bilBi2rxSiV2qwMXiS8VU76ypqamtUyNJyi7XhdTHAZkfJ0SDFaGY3a6NxiZwCX0cXPY0e8/Q7U0H36x9TyA6u6VUr9e3luTr3NsKpTCATf/kU9vhAE3YRf60zmsI8wwbqK1dvP1PvcvyLLvd4f3wF0Ak2Z3PgVSbF4OUW7Gtc3+XfxDywPPdeSAHN8e4Q2yyBmzrPvTC3UCona6kOYyUR7ioR90hx3r47LL1sist4zUEvXikr6+v/7hKUCcD0PXTeUjHS+Ji1BX1gkv9Ce8ZiNIMDg5Ku2hxxdNbeEhI4YKKp+PAJdPkA+SOiNtK8S5OKyuJ9rutKE7W1tYOrbEsgNDqomZWTg3jp0TX9fIIuIy+4j1DJ8Ou8tNjSNrPQV51f0w4T6KPs9Vf43MxnjmLbK9tcsV5Hc9fnbrzFCtvaHCw1HMum3wcUtj1yh2krxCoE+rsm5E9PT2r3tpbBfvJAwXnWekbugBqxMV9YOtpmLD7UieMZVgTw3hsK3Qfn13jUrFNCCkf1pg9v1HmJYPhRCqJqA2uGjsMe1QOtHBzFe7hjOCDG3+tILoL23Ki4e7KQ1zbENz0tsHwjtXjj3MRqu3ypBLR9o7GxsYd725D9Fj8FLTwmrAKyr3imZb3sG3q/XxYN0+DS6WMhqZfBvYPqjxBPsTurdmwUl6xWq9GwSQaynUFzap2h3x0jrs77BxstVqTI2CxEm9NqD1BLmFzKb5tmmIY/MKiFF4IaW+bV1ZgZx3DMBS8CLLirY3lniAtMwSxdtYGM69Y73BMtpPiYlwIEVV81ccOhyMhGVbX4D+f/BOPaSY9WldSEQy3f3260WjsDgv2HkJ9Gmk0GisdEIWcrSv5TEF7gnDCF6MIYsriIXjGCyGWenblRZ1E7E9SfB4lrBNRq6fO8JAvQhdABHUSlKQY8/i7oy/Pa8O/+tomgAzf4E7/DdhvdnOMy02QolemubsTQQq/1YZ/l+DxlbgU5q9LZ/+eXcqXQWtHpuqRCVZGf8CDI9rhYhjnRNflKYWvj9z60SSok5S8mZmZtt6rYDL/ZLfbf169aEaS7WCz/xIEByDnfgWXreuRAHLMeavuN/7pcYIY1cBQwmYZzLzsyd+dTtkfvsw5zYDT6WzF3zAXcJQ9NoTWQX78yT8Bne+va3CG/oMZBe24anUSiYT51ywUCQUuJHZRT2VknD4AffYmQaTN8Q/cIIjdOT6F9Ebm5IR2llelibeVvp3bG7FYby+JuudR76/8DSl/ZnlXcLm1AAAAAElFTkSuQmCC&logoColor=white) |
 
+# Notes
+
+- If you'd like to create a similar README for your own profile, I have a [repository](https://github.com/ianwu13/gh_readme_from_template) which generates them from a json template.
+- Huge thanks to [Sidney Arcidiacono](https://github.com/SidneyArcidiacono/) for the original design!
