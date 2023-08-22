@@ -1,4 +1,6 @@
-# Info
+# GitHub Profile Readme File From Template
+
+## Info
 
 This repo allows the user to quickly generate attractive custom README files for their github profile (or whatever) based on a simple template.
 
