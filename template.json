@@ -1,21 +1,15 @@
 {
     "section_0": {
-        "format": "image",
-        "src": "/header_1.png",
-        "alt": ""
-    },
-    "section_1": {
         "title": "Profiles and Contact",
         "format": "badge_group_linked",
         "badges": [
             ["Website", "#005A9C", "w3c", "https://ianwu13.github.io/"],
             ["LinkedIn", "#0077B5", "linkedin", "https://www.linkedin.com/in/ianwu13"],
             ["GitHub", "#100000", "github", "https://www.github.com/ianwu13"],
-            ["Academic Email", "#EA4335", "gmail", "mailto:ianwu@usc.edu"],
-            ["Professional Email", "#0078D4", "microsoftoutlook", "mailto:ianwu99@outlook.com"]
+            ["Email", "#0078D4", "microsoftoutlook", "mailto:ianwu99@outlook.com"]
         ]
     },
-    "section_2": {
+    "section_1": {
         "title": "Technical Skills",
         "format": "table",
         "cols": ["Type", "Technologies"],
@@ -45,6 +39,7 @@
             ["Databases", [
                 ["MySQL", "#4479A1", "mysql"],
                 ["PostgreSQL", "#4169E1", "postgresql"],
+                ["Redis", "#FF4438", "redis"],
                 ["MongoDB", "#47A248", "mongodb"],
                 ["Firebase", "#FFCA28", "firebase", "black"]]],
             ["Data Visualization", [
@@ -52,20 +47,21 @@
                 ["Seaborn", "#EAEAF2", "data:image/png;base64,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", "black"],
                 ["Plotly", "#3F4F75", "plotly"]]],
             ["Web Development", [
-                ["React.JS", "#61DAFB", "react", "black"],
+                ["React", "#61DAFB", "react", "black"],
+                ["Django", "#092E20", "django"],
                 ["Flask", "#000000", "flask"],
-                ["Node.js", "#339933", "nodedotjs"],
                 ["HTML", "#E34F26", "html5"],
                 ["CSS", "#1572B6", "css3"]]],
             ["DevOps/MLOps and Deployment", [
-                ["Amazon AWS", "#232F3E", "amazonaws"],
-                ["Microsoft Azure", "#0078D4", "microsoftazure"],
+                ["Amazon AWS", "#FF9900", "amazon"],
+                ["Google GCP", "#4285F4", "google"],
                 ["Conda", "#44A833", "anaconda"],
                 ["Docker", "#2496ED", "docker"],
-                ["Pickle", "#93934A", "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAARpQTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////s0ZwpAAAAF50Uk5TAAATWZOVe6/6pgdq2f7/6CIXs/3dD8eAAdg4+/kIv0bfoBv0aaTiLfxcFszOCQq4cA3VBcrCICS0EULzOmXvM4vJsrUE8O2RC6MCU5DI5mEG63lbtjnumr4yjYZmO2cNiAMAAAEFSURBVHicfdLnVsJAEAXgFYSskYzEWKiKgAYRFQtgLyhFUbF33/819ODRzMyO3r/fzZbJKiVnKBQejkQtPfKH26MxB74yFpfdHfdgkImQ6JNT8JNpyRPWr0NSKqTSQSEjeHYmcHCEwqxGhZxQmEMOlun5Ai4UzcI89oW84b6DvLRoeHkJL1BZ5r6yih2q3Neor28wj29iLtXqzBsx8v3WNvOdXeKwRzm7f0CdzvDw6NijXsEj8pvAc1IO+LTaMrztBm53PMMtdMDumcGZ6Dnav6e56wvs6pL7Vf+aXNChfHNrs/lRL9wl1D8Fff/AGRcen/jfI4X084vESr0O8vb+Ybyu73wC6ZMqpNwDAkQAAAAASUVORK5CYII="]]],
+                ["Kubernetes", "#326CE5", "kubernetes"]]],
             ["Code Collaboration", [
                 ["Git", "#F05032", "git"],
                 ["GitHub", "#181717", "github"],
+                ["GitLab", "#FC6D26", "gitlab"],
                 ["Google Colab", "#F9AB00", "googlecolab"],
                 ["Replit", "#F26207", "replit"]]],
             ["Operating Systems", [
@@ -80,7 +76,7 @@
                 ["Slurm Workload Manager", "#42afeb", "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAzCAMAAABWt10pAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAApRQTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////IjQ6hAAAANx0Uk5TAAUcJyYgJIry//nCLbH+tRIE990zCOM5CeQ6BhcYDwIRFgoAGUmChG889twyASx0gV8lj+b736SoH7j99bAdx4ATXvjpRe8eyAMbR/FueivnjfoHFA6/bM7rCxA0qb6zednJ4jih8JGst1mG1jBTjoxpuq3uRMrgPj8pDGS86N4N03xBwGs75cFLzcaTgzZzI5imTxUvnapU2jF+7UOj9EbMxZnP0jVmuVtxbX38f669tp/hq3I3KCLzZ5B1GpVhYHYq10rUXLtiidDb0VB4nlJYWlfqly6WVXCvPRVcfTsAAATqSURBVHic7Zf7X1NlGMDfTXCdgOmRgSjbDuMQiGNgDFBEcQQoBwYKGxEMAWFCokEXCBLDmRcIJBEJkrSSUpklUZQGy+xudsFu6+Y/0/OecTznMFabcx9/qOen93mf8zzf97x7LmcI/SdFIl2CJShYEjjGUtkDBCsPhoQGDBImJzhZtjxADHLFHQYRrggQJIJnEJErAwSJEkBWrf4fct8g0UqVSqVUk2iRH56KAZtKE0v5h6DjHopPAFmTCAq5lodokxDSJadg27qHU/2DxOrT2JjpGRAUrecpG2IQytyYxa43bfYPkr2Fi2oALecRbS4reTIlqPlb5225/kG2FXCQBKwyymBWChmsFRnnben3FCKWwEAoabGMlZLtVEAg8aAl7OA0eWmsAFJ2d8FNZrO5HE6repTr7hWQslo+hR9bilBi2rxSiV2qwMXiS8VU76ypqamtUyNJyi7XhdTHAZkfJ0SDFaGY3a6NxiZwCX0cXPY0e8/Q7U0H36x9TyA6u6VUr9e3luTr3NsKpTCATf/kU9vhAE3YRf60zmsI8wwbqK1dvP1PvcvyLLvd4f3wF0Ak2Z3PgVSbF4OUW7Gtc3+XfxDywPPdeSAHN8e4Q2yyBmzrPvTC3UCona6kOYyUR7ioR90hx3r47LL1sist4zUEvXikr6+v/7hKUCcD0PXTeUjHS+Ji1BX1gkv9Ce8ZiNIMDg5Ku2hxxdNbeEhI4YKKp+PAJdPkA+SOiNtK8S5OKyuJ9rutKE7W1tYOrbEsgNDqomZWTg3jp0TX9fIIuIy+4j1DJ8Ou8tNjSNrPQV51f0w4T6KPs9Vf43MxnjmLbK9tcsV5Hc9fnbrzFCtvaHCw1HMum3wcUtj1yh2krxCoE+rsm5E9PT2r3tpbBfvJAwXnWekbugBqxMV9YOtpmLD7UieMZVgTw3hsK3Qfn13jUrFNCCkf1pg9v1HmJYPhRCqJqA2uGjsMe1QOtHBzFe7hjOCDG3+tILoL23Ki4e7KQ1zbENz0tsHwjtXjj3MRqu3ypBLR9o7GxsYd725D9Fj8FLTwmrAKyr3imZb3sG3q/XxYN0+DS6WMhqZfBvYPqjxBPsTurdmwUl6xWq9GwSQaynUFzap2h3x0jrs77BxstVqTI2CxEm9NqD1BLmFzKb5tmmIY/MKiFF4IaW+bV1ZgZx3DMBS8CLLirY3lniAtMwSxdtYGM69Y73BMtpPiYlwIEVV81ccOhyMhGVbX4D+f/BOPaSY9WldSEQy3f3260WjsDgv2HkJ9Gmk0GisdEIWcrSv5TEF7gnDCF6MIYsriIXjGCyGWenblRZ1E7E9SfB4lrBNRq6fO8JAvQhdABHUSlKQY8/i7oy/Pa8O/+tomgAzf4E7/DdhvdnOMy02QolemubsTQQq/1YZ/l+DxlbgU5q9LZ/+eXcqXQWtHpuqRCVZGf8CDI9rhYhjnRNflKYWvj9z60SSok5S8mZmZtt6rYDL/ZLfbf169aEaS7WCz/xIEByDnfgWXreuRAHLMeavuN/7pcYIY1cBQwmYZzLzsyd+dTtkfvsw5zYDT6WzF3zAXcJQ9NoTWQX78yT8Bne+va3CG/oMZBe24anUSiYT51ywUCQUuJHZRT2VknD4AffYmQaTN8Q/cIIjdOT6F9Ebm5IR2llelibeVvp3bG7FYby+JuudR76/8DSl/ZnlXcLm1AAAAAElFTkSuQmCC"]]]
         ]
     },
-    "section_3": {
+    "section_2": {
         "title": "Notes",
         "format": "bullets",
         "items": [
